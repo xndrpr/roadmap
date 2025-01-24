@@ -1,10 +1,5 @@
-import { BasePage } from '@/shared/ui/base-page/styled'
-import { NavigationBar } from '@/widgets/navigation-bar'
+import { HomePageSC } from "./styled";
 
 export const HomePage = () => {
-  return (
-    <BasePage>
-        <NavigationBar/> 
-    </BasePage>
-  )
-}
+    return <HomePageSC>Home</HomePageSC>;
+};
