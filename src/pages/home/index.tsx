@@ -1,5 +1,13 @@
-import { HomePageSC } from "./styled";
+import { Content, HomePageSC } from "./styled";
+import { MatrixBackground } from "@/shared/ui/matrix-background";
 
 export const HomePage = () => {
-    return <HomePageSC>Home</HomePageSC>;
+    return (
+        <HomePageSC>
+            <MatrixBackground />
+            <Content>
+                <h1>Home</h1>
+            </Content>
+        </HomePageSC>
+    );
 };
