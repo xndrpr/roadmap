@@ -27,14 +27,14 @@ export const MatrixBackground = () => {
             ctx.fillStyle = "#262626";
             ctx.font = `${fontSize}px monospace`;
 
-            drops.forEach((y, x) => {
+            drops.forEach((y, index) => {
                 const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                ctx.fillText(text, x * fontSize, y * fontSize);
+                ctx.fillText(text, index * fontSize, y * fontSize);
 
                 if (y * fontSize > height && Math.random() > 0.95) {
-                    drops[x] = 0;
+                    drops[index] = 0;
                 }
-                drops[x] += speed;
+                drops[index] += speed;
             });
 
             requestAnimationFrame(draw);
