@@ -14,7 +14,7 @@ export const HomePage = () => {
                     <Link href="https://linkedin.com/in/axndrpr" target="_blank">
                         LinkedIn
                     </Link>
-                    <Link href="https://velaton.github.io/portfolio" target="_blank">
+                    <Link href="https://velaton.gitbook.io/portfolio" target="_blank">
                         Portfolio
                     </Link>
                     <Link href="/roadmap">Roadmap</Link>
