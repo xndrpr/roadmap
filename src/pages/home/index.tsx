@@ -1,35 +1,22 @@
-import { Content, HomePageSC, Roadmap, Title } from "./styled";
-import { Step } from "./ui/step";
+import { Content, Link, Navigation, Page, Title } from "./styled";
 import { MatrixBackground } from "@/shared/ui/matrix-background";
 
 export const HomePage = () => {
     return (
-        <HomePageSC>
+        <Page>
             <MatrixBackground />
             <Content>
-                <Title>Alexander Prokopenko</Title>
-                <Roadmap>
-                    <Step name="I was born" date="2008" done />
-                    <Step name="I started programming" date="2020 November" done />
-                    <Step name="I earned my first money on programming" date="2022 August" done />
-                    <Step name="I started learning frontend" date="2024 April" done />
-                    <Step
-                        name="I got my first intern job as a frontend developer"
-                        date="2024 May"
-                        done
-                    />
-                    <Step
-                        name="I got my first Juniour Frontend Developer job"
-                        date="2024 August"
-                        done
-                    />
-                    <Step
-                        name="Started applying for Middle Frontend Developer positions"
-                        date="2025 January"
-                        done
-                    />
-                </Roadmap>
+                <Title>Alexander Prokopenko - React Frontend Developer</Title>
+                <Navigation>
+                    <Link href="https://github.com/xndrpr" target="_blank">
+                        Github
+                    </Link>
+                    <Link href="https://linkedin.com/in/axndrpr" target="_blank">
+                        LinkedIn
+                    </Link>
+                    <Link href="/roadmap">Roadmap</Link>
+                </Navigation>
             </Content>
-        </HomePageSC>
+        </Page>
     );
 };
