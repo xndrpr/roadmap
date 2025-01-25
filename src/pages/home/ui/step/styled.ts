@@ -37,11 +37,9 @@ export const Point = styled(motion.svg)`
 `;
 
 export const Name = styled.h2`
-    max-width: 100px;
     font-size: 16px;
     color: #fff;
     text-align: center;
-    text-transform: uppercase;
 `;
 
 export const Date = styled.h3`

@@ -5,9 +5,10 @@ import { useRef, useState } from "react";
 interface Props {
     name: string;
     date: string;
+    done?: boolean;
 }
 
-export const Step = ({ name, date }: Props) => {
+export const Step = ({ name, date, done }: Props) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -41,7 +42,9 @@ export const Step = ({ name, date }: Props) => {
                     />
                 </Point>
                 <Data>
-                    <Name>{name}</Name>
+                    <Name>
+                        {name} {done ? "✅" : ""}
+                    </Name>
                     <Date>{date}</Date>
                 </Data>
             </StepSC>
