@@ -1,4 +1,4 @@
-import { Date, Line, Name, StepContainer, StepSC } from "./styled";
+import { Data, Date, Line, Name, Point, StepContainer, StepSC } from "./styled";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
 
@@ -16,19 +16,34 @@ export const Step = ({ name, date }: Props) => {
 
     const [progress, setProgress] = useState(0);
 
-    // Update the progress value as scrollYProgress changes
     useMotionValueEvent(scrollYProgress, "change", latest => {
-        setProgress(Math.round(latest * 100)); // Convert to percentage
+        setProgress(Math.round(latest * 100));
     });
 
     return (
         <StepContainer ref={ref}>
             <StepSC
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: progress / 100, scale: progress / 100 }}
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
             >
-                <Name>{name}</Name>
-                <Date>{date}</Date>
+                <Point>
+                    <motion.circle
+                        cx="50%"
+                        cy="50%"
+                        r={5}
+                        fill={"#fff"}
+                        strokeWidth="1"
+                        style={{ zIndex: 2 }}
+                        initial={{ scale: 0.1 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                    />
+                </Point>
+                <Data>
+                    <Name>{name}</Name>
+                    <Date>{date}</Date>
+                </Data>
             </StepSC>
             <Line>
                 <motion.line
@@ -40,15 +55,6 @@ export const Step = ({ name, date }: Props) => {
                     strokeWidth="1"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: progress / 100 }}
-                />
-                <motion.circle
-                    cx="50%"
-                    cy="50%"
-                    r="5"
-                    fill={"#fff"}
-                    strokeWidth="1"
-                    initial={{ scale: 0.1 }}
-                    animate={{ scale: progress / 100 }}
                 />
             </Line>
         </StepContainer>

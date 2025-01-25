@@ -16,6 +16,7 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.h1`
+    margin: 8px;
     text-align: center;
 `;
 
